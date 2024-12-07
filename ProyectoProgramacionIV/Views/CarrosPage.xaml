@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoProgramacionIV.Views.CarrosPage"
+             Title="CarrosPage">
+
+    <StackLayout Padding="10">
+       <ListView x:Name="CarrosListView" IsPullToRefreshEnabled="True" ItemSelected="CarrosListView_ItemSelected">
+           <ListView.ItemTemplate>
+               <DataTemplate>
+                   <TextCell Text="{Binding Marca}" Detail="{Binding Modelo}" />
+               </DataTemplate>
+           </ListView.ItemTemplate>
+       </ListView>
+
+       <Button Text="Agregar Carro" Clicked="AddCarroButton_Clicked" />
+    </StackLayout>
+</ContentPage>

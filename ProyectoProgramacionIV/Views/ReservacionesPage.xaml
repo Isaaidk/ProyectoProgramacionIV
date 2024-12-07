@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoProgramacionIV.Views.ReservacionesPage"
+             Title="ReservacionesPage">
+    <StackLayout Padding="10">
+        <Label Text="Agregar Nueva Reservación" FontSize="20" HorizontalOptions="Center" />
+
+        <Picker x:Name="ClientePicker" Title="Seleccionar Cliente">
+        </Picker>
+
+        <Picker x:Name="CarroPicker" Title="Seleccionar Carro">
+        </Picker>
+
+        <DatePicker x:Name="FechaReservaPicker" />
+
+        <Button Text="Agregar Reservación" Clicked="AddReservacionButton_Clicked" />
+
+        <ListView x:Name="ReservacionesListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding IdCliente}" Detail="{Binding FechaReserva}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
